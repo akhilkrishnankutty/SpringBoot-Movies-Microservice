@@ -1,0 +1,3 @@
+FROM openjdk:25
+COPY target/movie_api.jar movie_api.jar
+CMD ["java", "-jar", "movie_api.jar"]

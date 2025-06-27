@@ -1,0 +1,3 @@
+FROM openjdk:25
+COPY target/movie_front.jar movie_front.jar
+CMD ["java", "-jar", "movie_front.jar"]

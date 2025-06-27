@@ -1,0 +1,3 @@
+FROM openjdk:25
+COPY target/movie_service_finder.jar movie_service_finder.jar
+CMD ["java", "-jar", "movie_service_finder.jar"]

@@ -1,0 +1,3 @@
+FROM openjdk:25
+COPY target/movie-backend.jar movie-backend.jar
+CMD ["java", "-jar", "movie-backend.jar"]

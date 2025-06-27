@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+
+  movie_backend:
+    build:
+      context: ./movie_backend
+      dockerfile: dockerfile
+    ports:
+      - "8011:8011"
+    depends_on:
+      - db
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/Movies
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: postgres
+  
+  movie_front:
+    build:
+      context: ./Movie_front_end
+      dockerfile: dockerfile
+    ports:
+      - "8021:8021"
+  localhost:
+    build:
+      context: ./Move-finderService
+      dockerfile: dockerfile
+    ports:
+      - "8080:8080"
+  movie_api:
+    build:
+      context: ./Moveis-api-gateway
+      dockerfile: dockerfile
+    ports:
+      - "8031:8031"
+
+
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_DB: Movies
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "8000:5432"
