@@ -12,7 +12,7 @@ A distributed microservices movie application built using Spring Boot, Spring Cl
 - **Responsibilities:**
   - Maintains a registry of all microservices in the system
   - Enables dynamic service discovery
-- **Port:** Default `8761` (unless configured)
+- **Port:** Default `8761`
 - **Docker Image:** `movie_service_finder.jar`
 - **UI Console:** Access Eureka dashboard at `http://localhost:8761`
 
